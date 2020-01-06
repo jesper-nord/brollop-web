@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import './app.css'
 import { Header, Menu, Divider } from './components'
-import { Accomondation, Home, Information, Schedule } from './content'
+import { Accomondation, Home, Information, RSVP, Schedule } from './content'
 
 const menuItems = [
   {
     text: 'Hem',
     content: Home
+  },
+  {
+    text: 'OSA',
+    content: RSVP
   },
   {
     text: 'Information',
@@ -31,11 +35,13 @@ const App = () => {
   return (
     <div className='app'>
       <Header />
-      <Menu items={menuItems} selected={currentPage} onClick={setCurrentPage} />
-      <Divider />
-      <div className='main-content'>
-      <Content />
-      </div>
+      <main className='main'>
+        <Menu items={menuItems} selectedIndex={currentPage} onClick={setCurrentPage} />
+        <Divider />
+        <section className='main-content'>
+          <Content />
+        </section>
+      </main>
     </div>
   )
 }

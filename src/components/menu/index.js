@@ -6,20 +6,23 @@ const Menu = ({ items, selectedIndex, onClick }) => {
     return null
   }
   return (
-    <ul className='menu'>
-      {items.map((item, index) => {
-        return (
-          <li
-            key={item.text}
-            title={item.text}
-            className={selectedIndex === index ? ['menu-item', 'selected'].join(' ') : 'menu-item'}
-            onClick={() => onClick(index)}
-          >
-            {item.text}
-          </li>
-        )
-      })}
-    </ul>
+    <nav className='menu-holder'>
+      <ul className='menu'>
+        {items.map((item, index) => {
+          debugger
+          return (
+            <li
+              key={item.text}
+              title={item.text}
+              className={`menu-item ${selectedIndex === index ? 'selected' : ''}`}
+              onClick={() => onClick(index)}
+            >
+              {item.text}
+            </li>
+          )
+        })}
+      </ul>
+    </nav>
   )
 }
 

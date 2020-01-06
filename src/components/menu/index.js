@@ -9,7 +9,6 @@ const Menu = ({ items, selectedIndex, onClick }) => {
     <nav className='menu-holder'>
       <ul className='menu'>
         {items.map((item, index) => {
-          debugger
           return (
             <li
               key={item.text}

@@ -1,15 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './app.css'
 import { Header, Menu, Divider } from './components'
+import { Accomondation, Home, Information, Schedule } from './content'
+
+const menuItems = [
+  {
+    text: 'Hem',
+    content: Home
+  },
+  {
+    text: 'Information',
+    content: Information
+  },
+  {
+    text: 'Boende',
+    content: Accomondation
+  },
+  {
+    text: 'Schema',
+    content: Schedule
+  }
+]
 
 const App = () => {
+
+  const [currentPage, setCurrentPage] = useState(0)
+
+  const Content = menuItems[currentPage].content 
+
   return (
     <div className='app'>
       <Header />
-      <Menu />
+      <Menu items={menuItems} selected={currentPage} onClick={setCurrentPage} />
       <Divider />
       <div className='main-content'>
-        <p>We can't wait to share our special day with you. Help us capture our wedding with Joy.</p>
+      <Content />
       </div>
     </div>
   )

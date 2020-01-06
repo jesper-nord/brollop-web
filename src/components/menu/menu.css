@@ -1,0 +1,19 @@
+.menu {
+  list-style-type: none;
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+  padding: 0;
+}
+
+.menu-item {
+  color: rgba(0, 0, 0, 0.7);
+  font-family: 'Roboto', sans-serif;
+  margin-right: 3em;
+  cursor: pointer;
+  display: inline;
+  
+}
+
+.menu-item:hover {
+  color: rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,30 @@
+.header {
+  background-image: url('../../images/Hesselby-Slott-2.jpg');
+  height: 550px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.header-title-holder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-title {
+  padding-top: 2.8em;
+  font-family: 'Parisienne', cursive;
+  font-size: 6em;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.header-subtitle {
+  font-family: 'Parisienne', cursive;
+  font-size: 2em;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}

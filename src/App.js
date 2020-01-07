@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './app.css'
+import './App.css'
 import { Header, Menu, Divider } from './components'
 import { Accomondation, Home, Information, RSVP, Schedule } from './content'
 

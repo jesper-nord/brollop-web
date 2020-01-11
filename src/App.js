@@ -1,43 +1,44 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './App.css'
 import { Header, Menu, Divider } from './components'
 import { Accomondation, Home, Information, RSVP, Schedule } from './content'
+import { useHashNavigation } from './hooks/useHashNavigation'
 
-const menuItems = [
-  {
+const routes = {
+  home: {
     text: 'Hem',
     content: Home
   },
-  {
+  rsvp: {
     text: 'OSA',
     content: RSVP
   },
-  {
+  information: {
     text: 'Information',
     content: Information
   },
-  {
-    text: 'Boende',
-    content: Accomondation
-  },
-  {
-    text: 'Schema',
-    content: Schedule
-  }
-]
+   accomondation: {
+     text: 'Boende',
+     content: Accomondation
+   },
+   schedule: {
+     text: 'Schema',
+     content: Schedule
+   },
+   fallback: 'home'
+}
 
 const App = () => {
+  const { currentRoute, currentPageName, navigate } = useHashNavigation(routes)
 
-  const [currentPage, setCurrentPage] = useState(0)
-
-  const Content = menuItems[currentPage].content 
+  const Content = currentRoute.content
 
   return (
     <div className='app'>
       <Header />
       <div className='main-wrapper'>
         <main className='main'>
-          <Menu items={menuItems} selectedIndex={currentPage} onClick={setCurrentPage} />
+          <Menu items={routes} currentPage={currentPageName} onClick={navigate} />
           <Divider />
           <section className='main-content'>
             <Content />

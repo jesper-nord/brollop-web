@@ -1,20 +1,21 @@
 import React from 'react'
 import './menu.css'
 
-const Menu = ({ items, selectedIndex, onClick }) => {
-  if (!items || items.length === 0) {
+const Menu = ({ items, currentPage, onClick }) => {
+  if (!items || Object.keys(items).length === 0) {
     return null
   }
   return (
     <nav className='menu-holder'>
       <ul className='menu'>
-        {items.map((item, index) => {
+        {Object.keys(items).map(page => {
+          const item = items[page]
           return (
             <li
-              key={item.text}
+              key={page}
               title={item.text}
-              className={`menu-item ${selectedIndex === index ? 'selected' : ''}`}
-              onClick={() => onClick(index)}
+              className={`menu-item ${page === currentPage ? 'selected' : ''}`}
+              onClick={() => onClick(page)}
             >
               {item.text}
             </li>

@@ -9,23 +9,23 @@ const routes = {
     text: 'Hem',
     content: Home
   },
-  rsvp: {
-    text: 'OSA',
-    content: RSVP
-  },
   information: {
     text: 'Information',
     content: Information
   },
-   accomondation: {
-     text: 'Boende',
-     content: Accomondation
-   },
-   schedule: {
-     text: 'Schema',
-     content: Schedule
-   },
-   fallback: 'home'
+  rsvp: {
+    text: 'OSA',
+    content: RSVP
+  },
+  accomondation: {
+    text: 'Boende',
+    content: Accomondation
+  },
+  schedule: {
+    text: 'Schema',
+    content: Schedule
+  },
+  fallback: 'home'
 }
 
 const App = () => {
@@ -41,7 +41,7 @@ const App = () => {
           <Menu items={routes} currentPage={currentPageName} onClick={navigate} />
           <Divider />
           <section className='main-content'>
-            <Content />
+            <Content navigate={navigate} />
           </section>
           <Divider />
           <section className='short-info'>

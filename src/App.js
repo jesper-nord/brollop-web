@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import { Header, Menu, Divider } from './components'
-import { Accomondation, Home, Information, RSVP, Schedule } from './content'
+import { Accomondation, Home, Information, RSVP, Schedule, ShortInfo } from './content'
 import { useHashNavigation } from './hooks/useHashNavigation'
 
 const routes = {
@@ -44,10 +44,7 @@ const App = () => {
             <Content navigate={navigate} />
           </section>
           <Divider />
-          <section className='short-info'>
-            <div className='location'>Hesselby Slott</div>
-            <div className='date'>Lördag den 27 juni, 2020</div>
-          </section>
+          <ShortInfo />
         </main>
       </div>
     </div>

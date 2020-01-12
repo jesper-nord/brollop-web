@@ -33,18 +33,3 @@
     padding: 0 6em;
   }
 }
-
-.short-info {
-  margin-top: auto;
-  margin-bottom: 2em;
-}
-
-.short-info .location {
-  font-family: 'Parisienne', cursive;
-  font-size: 3em;
-}
-
-.short-info .date {
-  margin-top: 1em;
-  color: rgba(0, 0, 0, 0.5);
-}

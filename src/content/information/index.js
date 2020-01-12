@@ -13,12 +13,12 @@ export const Information = ({ navigate }) => {
         <h2>Hesselby Slott</h2>
         <p>Datum: 27/6 2020</p>
         <p>Tid: Klockan 15.00</p>
-        <p>Adress: Maltesholmsvägen 1, Vällingby</p>
+        <p>Adress: <Link external href='https://goo.gl/maps/gahTqt2hg1eeqbJEA'>Maltesholmsvägen 1, Vällingby</Link></p>
         <h2>Hitta hit</h2>
         <p>
           Det tar ca 7 minuter att gå från Johannelunds tunnelbanestation. 
           Gå längs spårets riktning över bron och sedan ner till höger, under bron och fortsätt längs vägen. Ni ser slottet och det är även skyltat.
-          https://goo.gl/maps/gahTqt2hg1eeqbJEA
+          
         </p>
       </section>
       <section className='section'>

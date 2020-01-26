@@ -10,7 +10,7 @@ export const Information = ({ navigate }) => {
         <h2>Hesselby Slott</h2>
         <p><strong>Datum:</strong> 27/6 2020</p>
         <p><strong>Tid:</strong> Klockan 15:00-03:00</p>
-        <p><strong>Adress:</strong> <Link external href='https://goo.gl/maps/gahTqt2hg1eeqbJEA'>Maltesholmsvägen 1, Vällingby</Link></p>
+        <p><strong>Adress:</strong> <Link external href='https://goo.gl/maps/grChjctvGP1JHGzq9'>Maltesholmsvägen 1, Vällingby</Link></p>
       </section>
       <section className='section'>
         <h1>Klädkod</h1>

@@ -17,11 +17,11 @@ export const ShortInfo = () => {
       <div className='timer'>
         <div className='timer-content'>
           <p className='timer-header'>{days}</p>
-          <p>dagar</p>
+          <p>{days === 1 ? 'dag' : 'dagar'}</p>
         </div>
         <div className='timer-content'>
           <p className='timer-header'>{hours}</p>
-          <p>timmar</p>
+          <p>{hours === 1 ? 'timme' : 'timmar'}</p>
         </div>
       </div>
     </section>

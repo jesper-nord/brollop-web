@@ -1,6 +1,6 @@
 import React from 'react'
 import '../content.css'
-import { Link } from '../../components/link'
+import { Link } from '../../components'
 
 export const Information = ({ navigate }) => {
   return (

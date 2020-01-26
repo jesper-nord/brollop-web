@@ -13,21 +13,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-p {
-  font-family: 'Noto Serif', serif;
-  color: #5b5b5b;
-  text-align: left;
-  line-height: 1.5;
-  margin: 0.4em 0;
-}
-
 h1, h2, h3 {
   color: #595955;
   margin: 0.6em 0 0.3em 0;
+  font-family: 'Playfair Display', serif;
 }
 
 h2 {
   margin-top: 1.5em;
+}
+
+p {
+  font-family: 'Fauna One', serif;
+  color: #5b5b5b;
+  text-align: left;
+  line-height: 1.5;
+  margin: 0.4em 0;
 }
 
 .image-border {

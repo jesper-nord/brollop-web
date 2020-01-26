@@ -16,22 +16,26 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
-.timer {
+.short-info .divider {
+  margin-top: 5em;
+}
+
+.short-info .timer {
   margin: 2em 0;
   display: flex;
   justify-content: space-evenly;
+  
 }
-
-.timer-content {
+.short-info .timer .timer-content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.timer-content p {
+.short-info .timer .timer-content p {
   margin: 0;
 }
 
-.timer-content p.timer-header {
+.short-info .timer .timer-content p.timer-header {
   font-size: 2em;
 }

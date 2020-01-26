@@ -1,10 +1,10 @@
 import React from 'react'
 import './divider.css'
-import leaves from '../../images/bronzed_leaves.png'
+import divider from '../../images/divider.png'
 
 const Divider = () => {
   return (
-    <img src={leaves} className='divider' alt='' />
+    <img src={divider} className='divider' alt='' />
   )
 }
 

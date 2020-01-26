@@ -43,7 +43,6 @@ const App = () => {
           <section className='main-content'>
             <Content navigate={navigate} />
           </section>
-          <Divider />
           <ShortInfo />
         </main>
       </div>

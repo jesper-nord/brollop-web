@@ -17,7 +17,7 @@
   min-height: 600px;
   background-color: white;
   margin: 0 auto;
-  box-shadow: 0 1px 30px -10px #a0a0a0;
+  box-shadow: 0 1px 30px -15px #8a8a8a;
 }
 
 @media only screen and (min-width: 640px) {

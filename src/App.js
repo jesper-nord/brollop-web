@@ -17,13 +17,13 @@ const routes = {
     text: 'Toastmasters',
     content: Toastmasters
   },
-  rsvp: {
-    text: 'OSA',
-    content: RSVP
-  },
   accomondation: {
-    text: 'Boende',
+    text: 'Boende & Hitta hit',
     content: Accomondation
+  },
+  rsvp: {
+    text: 'O.S.A.',
+    content: RSVP
   },
   fallback: 'home'
 }

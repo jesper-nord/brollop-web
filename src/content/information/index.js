@@ -11,17 +11,6 @@ export const Information = ({ navigate }) => {
         <p><strong>Datum:</strong> 27/6 2020</p>
         <p><strong>Tid:</strong> Klockan 15:00-03:00</p>
         <p><strong>Adress:</strong> <Link external href='https://goo.gl/maps/gahTqt2hg1eeqbJEA'>Maltesholmsvägen 1, Vällingby</Link></p>
-        <h2>Hitta hit</h2>
-        <p>
-          Det tar ca 7 minuter att gå från Johannelunds tunnelbanestation. 
-          Gå längs spårets riktning över bron och sedan ner till höger, under bron och fortsätt längs vägen. Ni ser slottet och det är även skyltat.
-        </p>
-      </section>
-      <section className='section'>
-        <h1>Boende</h1>
-        <p>
-          Det finns möjlighet att bo över på slottets hotell. Läs mer under <Link onClick={() => navigate('accomondation')}>boende</Link>.
-        </p>
       </section>
       <section className='section'>
         <h1>Klädkod</h1>

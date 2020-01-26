@@ -13,6 +13,13 @@ export const Accomondation = () => {
           På <Link external href='https://www.hesselbyslott.se/hotell/'>Hesselby slotts hemsida</Link> går det att läsa mer om rummen och boka.
         </p>
       </section>
+      <section className='section'>
+        <h1>Hitta hit</h1>
+        <p>
+          Det tar ca 7 minuter att gå från Johannelunds tunnelbanestation. 
+          Gå längs spårets riktning över bron och sedan ner till höger, under bron och fortsätt längs vägen. Ni ser slottet och det är även skyltat.
+        </p>
+      </section>
     </div>
   )
 }

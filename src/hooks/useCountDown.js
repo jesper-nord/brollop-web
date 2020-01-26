@@ -11,7 +11,6 @@ export const useCountDown = (untilDate, resolution = 60000) => {
 
   useEffect(() => {
     updateDiff()
-
     const interval = setInterval(() => {
       updateDiff()
     }, resolution)

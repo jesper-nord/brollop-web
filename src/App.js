@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import { Header, Menu, Divider } from './components'
-import { Accomondation, Home, Information, RSVP, Schedule, ShortInfo } from './content'
+import { Accomondation, Home, Information, RSVP, Toastmasters, ShortInfo } from './content'
 import { useHashNavigation } from './hooks/useHashNavigation'
 
 const routes = {
@@ -13,6 +13,10 @@ const routes = {
     text: 'Information',
     content: Information
   },
+  toastmasters: {
+    text: 'Toastmasters',
+    content: Toastmasters
+  },
   rsvp: {
     text: 'OSA',
     content: RSVP
@@ -20,10 +24,6 @@ const routes = {
   accomondation: {
     text: 'Boende',
     content: Accomondation
-  },
-  schedule: {
-    text: 'Schema',
-    content: Schedule
   },
   fallback: 'home'
 }

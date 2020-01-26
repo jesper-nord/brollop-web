@@ -1,7 +1,7 @@
 import React from 'react'
 import './home.css'
 import '../content.css'
-import us from '../../images/us@0.5.jpeg'
+import us from '../../images/us@0.15.jpeg'
 
 export const Home = () => {
   return (

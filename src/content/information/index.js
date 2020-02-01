@@ -2,7 +2,7 @@ import React from 'react'
 import '../content.css'
 import { Link } from '../../components'
 
-export const Information = ({ navigate }) => {
+export const Information = () => {
   return (
     <div className='content'>
       <section className='section'>

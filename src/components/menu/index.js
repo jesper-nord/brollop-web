@@ -6,7 +6,7 @@ const Menu = ({ items, currentPage, onClick }) => {
     return null
   }
   return (
-    <nav className='menu-holder'>
+    <nav className='menu-holder' id='nav-menu'>
       <ul className='menu'>
         {Object.keys(items).map(page => {
           if (page === 'fallback') {

@@ -30,18 +30,22 @@ const routes = {
 
 const App = () => {
   const { currentRoute, currentPageName, navigate } = useHashNavigation(routes)
-
   const Content = currentRoute.content
+
+  const scrollAndNavigate = page => {
+    document.getElementById('nav-menu').scrollIntoView({ behavior: 'smooth' })
+    navigate(page)
+  }
 
   return (
     <div className='app'>
       <Header />
       <div className='main-wrapper'>
         <main className='main'>
-          <Menu items={routes} currentPage={currentPageName} onClick={navigate} />
+          <Menu items={routes} currentPage={currentPageName} onClick={scrollAndNavigate} />
           <Divider />
           <section className='main-content'>
-            <Content navigate={navigate} />
+            <Content />
           </section>
           <ShortInfo />
         </main>

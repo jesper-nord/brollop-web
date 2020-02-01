@@ -1,13 +1,12 @@
 import { useState, useEffect, useCallback } from 'react'
-import { isAfter, differenceInCalendarDays, differenceInDays } from 'date-fns'
+import { isAfter, differenceInMilliseconds } from 'date-fns'
 
 export const useCountDown = (untilDate, resolution = 60000) => {
-  const timestamp = untilDate.getTime()
-  const [diff, setDiff] = useState({ days: 0, hours: 0 })
+  const [diff, setDiff] = useState({ days: 0, hours: 0, minutes: 0 })
 
   const updateDiff = useCallback(() => {
-    setDiff(calculateDiffUntil(timestamp))
-  }, [timestamp])
+    setDiff(millisecondsToDays(differenceInMilliseconds(untilDate, new Date())))
+  }, [untilDate])
 
   useEffect(() => {
     updateDiff()
@@ -17,23 +16,27 @@ export const useCountDown = (untilDate, resolution = 60000) => {
     return () => clearInterval(interval)
   }, [updateDiff, resolution])
 
-  if (isAfter(new Date(), new Date(timestamp))) {
-    return [0, 0]
+  if (isAfter(new Date(), untilDate)) {
+    return [0, 0, 0]
   }
 
-  return [diff.days, diff.hours]
+  return [diff.days, diff.hours, diff.minutes]
 }
 
-const calculateDiffUntil = timestamp => {
-  const now = new Date()
-  const until = new Date(timestamp)
-  const calendarDays = differenceInCalendarDays(until, now)
-  const days = differenceInDays(until, now)
-  let hours
-  if (calendarDays === days) {
-    hours = until.getHours() - new Date().getHours()
-  } else {
-    hours = 24 - (new Date().getHours() - until.getHours())
+const dayMs = 24 * 60 * 60 * 1000
+const hourMs = 60 * 60 * 1000
+
+const millisecondsToDays = ms => {
+  let days = Math.floor(ms / dayMs)
+  let hours = Math.floor((ms - days * dayMs) / hourMs)
+  let minutes = Math.round((ms - days * dayMs - hours * hourMs) / 60000)
+  if (minutes === 60) {
+    hours++
+    minutes = 0
   }
-  return { days, hours }
+  if (hours === 24) {
+    days++
+    hours = 0
+  }
+  return { days, hours, minutes }
 }

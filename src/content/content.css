@@ -4,15 +4,20 @@
   align-items: center;
 }
 
+.content .section {
+  width: 100%;
+  text-align: left;
+  padding: 1.5em 0;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.content .section:first-of-type {
+  padding-top: 0;
+}
+
 .img-text {
   margin-top: 0.5em;
   font-style: italic;
   font-size: 0.85em;
 }
 
-.section {
-  width: 100%;
-  text-align: left;
-  padding: 1.5em 0;
-  border-bottom: 1px solid #e4e4e4;
-}

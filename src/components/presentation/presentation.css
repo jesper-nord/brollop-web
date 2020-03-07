@@ -34,7 +34,8 @@
 
 @media only screen and (min-width: 640px) {
   .presentation-right {
-    margin: 3em 2em;
+    margin: 0 2em;
+    align-self: center;
   }
 }
 

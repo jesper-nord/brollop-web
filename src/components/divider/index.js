@@ -1,10 +1,10 @@
 import React from 'react'
-import './divider.css'
+import styles from './divider.module.scss'
 import divider from '../../images/divider.png'
 
 const Divider = () => {
   return (
-    <img src={divider} className='divider' alt='' />
+    <img src={divider} className={styles.divider} alt='' />
   )
 }
 

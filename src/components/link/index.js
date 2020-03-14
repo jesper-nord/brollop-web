@@ -1,6 +1,6 @@
 import React from 'react'
-import './link.css'
+import styles from './link.module.scss'
 
 export const Link = ({ href, children, external = false }) => {
-  return <a href={href} className='link' target={external ? '_blank' : '_self'} rel='noopener noreferrer'>{children}</a>
+  return <a href={href} className={styles.link} target={external ? '_blank' : '_self'} rel='noopener noreferrer'>{children}</a>
 }

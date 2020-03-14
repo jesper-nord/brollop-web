@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactGA from 'react-ga'
-import './index.css'
-import App from './App'
+import './index.scss'
+import App from './app'
 import * as serviceWorker from './serviceWorker'
 
 ReactGA.initialize('UA-159992142-1', {

@@ -1,5 +1,5 @@
 import React from 'react'
-import './shortinfo.css'
+import styles from './shortinfo.module.scss'
 import { useCountDown } from '../../hooks/useCountDown'
 import { Divider } from '../../components'
 
@@ -9,22 +9,22 @@ export const ShortInfo = () => {
   const [ days, hours, minutes ] = useCountDown(weddingDate, 20000)
 
   return (
-    <section className='short-info'>
+    <section className={styles.shortInfo}>
       <Divider />
-      <p className='location'>Hesselby Slott</p>
-      <p className='date'>Lördag den 27 juni, 2020</p>
+      <p className={styles.location}>Hesselby Slott</p>
+      <p className={styles.date}>Lördag den 27 juni, 2020</p>
 
-      <div className='timer'>
-        <div className='timer-content'>
-          <p className='timer-header'>{days}</p>
+      <div className={styles.timer}>
+        <div className={styles.timerContent}>
+          <p className={styles.timerHeader}>{days}</p>
           <p>{days === 1 ? 'dag' : 'dagar'}</p>
         </div>
-        <div className='timer-content'>
-          <p className='timer-header'>{hours}</p>
+        <div className={styles.timerContent}>
+          <p className={styles.timerHeader}>{hours}</p>
           <p>{hours === 1 ? 'timme' : 'timmar'}</p>
         </div>
-        <div className='timer-content'>
-          <p className='timer-header'>{minutes}</p>
+        <div className={styles.timerContent}>
+          <p className={styles.timerHeader}>{minutes}</p>
           <p>{minutes === 1 ? 'minut' : 'minuter'}</p>
         </div>
       </div>

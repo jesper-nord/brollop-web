@@ -1,14 +1,14 @@
 import React from 'react'
-import './presentation.css'
+import styles from './presentation.module.scss'
 
 const Presentation = ({ image, title, children}) => {
   return (
-    <div className='presentation'>
-      <div className='presentation-left'>
+    <div className={styles.presentation}>
+      <div className={styles.left}>
         <h2>{title}</h2>
-        <img className='presentation-img image-border' src={image} alt={title} />
+        <img className={[styles.img, 'image-border'].join(' ')} src={image} alt={title} />
       </div>
-      <div className='presentation-right'>
+      <div className={styles.right}>
         {children}
       </div>
     </div>

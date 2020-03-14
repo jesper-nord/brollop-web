@@ -1,13 +1,13 @@
 import React from 'react'
-import './menu.css'
+import styles from './menu.module.scss'
 
 const Menu = ({ items, currentPage, onClick }) => {
   if (!items || Object.keys(items).length === 0) {
     return null
   }
   return (
-    <nav className='menu-holder' id='nav-menu'>
-      <ul className='menu'>
+    <nav className={styles.menuHolder} id='nav-menu'>
+      <ul className={styles.menu}>
         {Object.keys(items).map(page => {
           if (page === 'fallback') {
             return null
@@ -18,7 +18,7 @@ const Menu = ({ items, currentPage, onClick }) => {
             <li
               key={page}
               title={item.text}
-              className={`menu-item ${page === currentPage ? 'selected' : ''}`}
+              className={[styles.menuItem, page === currentPage && styles.selected].join(' ')}
               onClick={() => onClick(page)}
             >
               {item.text}

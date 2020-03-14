@@ -1,18 +1,18 @@
 import React from 'react'
-import './header.css'
+import styles from './header.module.scss'
 import { useLazyLoad } from '../../hooks/useLazyLoad'
 import banner from '../../images/hesselby-slott.jpg'
 
 const Header = () => {
   const headerLoaded = useLazyLoad(banner)
 
-  const backgroundStyle = { backgroundImage: headerLoaded ? `url(${headerLoaded})` : '' }
+  const backgroundStyle = { backgroundImage: headerLoaded && `url(${headerLoaded})` }
 
   return (
-    <header className={['header', headerLoaded ? 'loaded' : ''].join(' ')} style={backgroundStyle}>
-      <div className='header-title-holder'>
-        <span className='header-title'>Ulrika &amp; Jesper</span>
-        <span className='header-subtitle'>27 juni 2020</span>
+    <header className={[styles.header, headerLoaded && styles.loaded].join(' ')} style={backgroundStyle}>
+      <div className={styles.headerTitleHolder}>
+        <span className={styles.headerTitle}>Ulrika &amp; Jesper</span>
+        <span className={styles.headerSubtitle}>27 juni 2020</span>
       </div>
     </header>
   )

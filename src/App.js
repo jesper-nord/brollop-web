@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import ReactGA from 'react-ga'
-import './App.css'
+import styles from './app.module.scss'
 import { Header, Menu, Divider } from './components'
 import { Accomondation, Home, Information, RSVP, Toastmasters, ShortInfo } from './content'
 import { useHashNavigation } from './hooks/useHashNavigation'
@@ -43,13 +43,13 @@ const App = () => {
   }, [route])
 
   return (
-    <div className='app'>
+    <div className={styles.app}>
       <Header />
-      <div className='main-wrapper'>
-        <main className='main'>
+      <div className={styles.mainWrapper}>
+        <main className={styles.main}>
           <Menu items={routes} currentPage={route} onClick={scrollAndNavigate} />
           <Divider />
-          <section className='main-content'>
+          <section className={styles.mainContent}>
             <Content />
           </section>
           <ShortInfo />

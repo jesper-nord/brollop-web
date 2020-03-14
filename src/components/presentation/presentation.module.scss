@@ -1,10 +1,12 @@
+@import "../../media-queries.scss";
+
 .presentation {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 2em 0;
 
-  @media only screen and (min-width: 640px) {
+  @include media(">phone") {
     flex-direction: row;
     align-items: flex-start;
   }
@@ -14,7 +16,7 @@
     flex-direction: column;
     align-items: center;
 
-    @media only screen and (min-width: 640px) {
+    @include media(">phone") {
       align-items: flex-start;
     }
   }
@@ -25,7 +27,7 @@
     justify-content: flex-start;
     margin: 1em;
 
-    @media only screen and (min-width: 640px) {
+    @include media(">phone") {
       margin: 0 2em;
       align-self: center;
     }

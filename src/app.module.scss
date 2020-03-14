@@ -1,3 +1,5 @@
+@import "./media-queries.scss";
+
 .app {
   text-align: center;
 
@@ -18,7 +20,7 @@
       margin: 0 auto;
       box-shadow: 0 1px 30px -15px #8a8a8a;
     
-      @media only screen and (min-width: 640px) {
+      @include media(">laptop") {
         width: 65vw;
       }
   
@@ -26,8 +28,12 @@
         width: 100%;
         box-sizing: border-box;
         padding: 0 1em;
-      
-        @media only screen and (min-width: 640px) {
+
+        @include media(">phone") {
+          padding: 0 2em;
+        }
+
+        @include media(">laptop") {
           padding: 0 6em;
         }
       }

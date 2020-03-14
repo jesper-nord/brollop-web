@@ -1,9 +1,11 @@
+@import "../../media-queries.scss";
+
 .us {
   width: 90%;
   margin-top: 2em;
 }
 
-@media only screen and (min-width: 640px) {
+@include media(">tablet") {
   .us {
     width: 50%;
     margin-top: 3em;

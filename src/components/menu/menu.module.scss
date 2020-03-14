@@ -1,8 +1,10 @@
+@import "../../media-queries.scss";
+
 .menuHolder {
   width: 100vw;
   padding-top: 1.5em;
 
-  @media only screen and (min-width: 640px) {
+  @include media(">tablet") {
     width: 50%;
     padding-bottom: 1.5em;
   }
@@ -13,8 +15,8 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
-  
-    @media only screen and (min-width: 640px) {
+
+    @include media(">tablet") {
       flex-direction: row;
       justify-content: space-evenly;
     }
@@ -25,8 +27,8 @@
       cursor: pointer;
       display: inline;
       margin: 0.3em 0;
-    
-      @media only screen and (min-width: 640px) {
+
+      @include media(">tablet") {
         margin: 0;
       }
     

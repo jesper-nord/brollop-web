@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "date-fns": "^2.10.0",
+    "include-media": "^1.4.9",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-ga": "^2.7.0"

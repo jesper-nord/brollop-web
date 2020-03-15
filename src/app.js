@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import ReactGA from 'react-ga'
 import styles from './app.module.scss'
 import { Header, Menu, Divider } from './components'
-import { Accomondation, Home, Information, RSVP, Toastmasters, ShortInfo } from './content'
+import { Accomondation, Home, Information, RSVP, Pictures, Toastmasters, ShortInfo } from './content'
 import { useHashNavigation } from './hooks/useHashNavigation'
 
 const routes = {
@@ -17,6 +17,10 @@ const routes = {
   toastmasters: {
     text: 'Toastmasters',
     content: Toastmasters
+  },
+  pictures: {
+    text: 'Bilder',
+    content: Pictures,
   },
   accomondation: {
     text: 'Boende & Hitta hit',

@@ -1,11 +1,9 @@
 @import "../../media-queries.scss";
 
 .menuHolder {
-  width: 100vw;
   padding-top: 1.5em;
 
   @include media(">tablet") {
-    width: 50%;
     padding-bottom: 1.5em;
   }
 
@@ -29,7 +27,17 @@
       margin: 0.3em 0;
 
       @include media(">tablet") {
-        margin: 0;
+        margin: 0 1em 0 0;
+
+        &:after {
+          content: "|";
+          color: rgba(0, 0, 0, 0.1);
+          margin-left: 1em;
+        }
+
+        &:last-of-type:after {
+          content: "";
+        }
       }
     
       &.selected {

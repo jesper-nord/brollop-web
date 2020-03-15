@@ -24,14 +24,21 @@
     transition: opacity 0.4s;
 
     @include media(">laptop") {
-      background-position: 0 -100px;
+      background-position: center -100px;
     }
+  }
+
+  @include media(">phone") {
+    height: 320px;
+  }
+
+  @include media(">=tablet") {
+    height: 400px;
   }
 
   @include media(">laptop") {
     height: 600px;
-    width: 100%;
-    background-position: 0 -100px;
+    background-position: center -100px;
   }
 
   &.loaded::before {
@@ -48,6 +55,7 @@
     .headerTitle {
       font-family: 'Parisienne', cursive;
       font-size: 4em;
+      margin-bottom: 0.1em;
       color: white;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
       z-index: 1;

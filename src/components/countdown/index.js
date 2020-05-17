@@ -2,8 +2,8 @@ import React from 'react'
 import styles from './countdown.module.scss'
 import { useCountDown } from '../../hooks/useCountDown'
 
-export const Countdown = ({ toDate }) => {
-  const [ days, hours, minutes ] = useCountDown(toDate)
+export const Countdown = ({ to }) => {
+  const [ days, hours, minutes ] = useCountDown(to)
 
   const showDays = days > 0
   const showHours = showDays || hours > 0

@@ -11,7 +11,7 @@ export const ShortInfo = () => {
       <Divider />
       <p className={styles.location}>Hesselby Slott</p>
       <p className={styles.date}>{format(WEDDING_DATE, 'PPPP', { locale: sv })}</p>
-      <Countdown toDate={WEDDING_DATE} />
+      <Countdown to={WEDDING_DATE} />
     </footer>
   )
 }

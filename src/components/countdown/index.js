@@ -5,20 +5,30 @@ import { useCountDown } from '../../hooks/useCountDown'
 export const Countdown = ({ toDate }) => {
   const [ days, hours, minutes ] = useCountDown(toDate)
 
+  const showDays = days > 0
+  const showHours = showDays || hours > 0
+  const showMinutes = showHours || minutes > 0
+
   return (
     <div className={styles.countdown}>
-      <div className={styles.unit}>
-        <p className={styles.header}>{days}</p>
-        <p>{days === 1 ? 'dag' : 'dagar'}</p>
-      </div>
-      <div className={styles.unit}>
-        <p className={styles.header}>{hours}</p>
-        <p>{hours === 1 ? 'timme' : 'timmar'}</p>
-      </div>
-      <div className={styles.unit}>
-        <p className={styles.header}>{minutes}</p>
-        <p>{minutes === 1 ? 'minut' : 'minuter'}</p>
-      </div>
+      {showDays && (
+        <div className={styles.unit}>
+          <p className={styles.header}>{days}</p>
+          <p>{days === 1 ? 'dag' : 'dagar'}</p>
+        </div>
+      )}
+      {showHours && (
+        <div className={styles.unit}>
+          <p className={styles.header}>{hours}</p>
+          <p>{hours === 1 ? 'timme' : 'timmar'}</p>
+        </div>
+      )}
+      {showMinutes && (
+        <div className={styles.unit}>
+          <p className={styles.header}>{minutes}</p>
+          <p>{minutes === 1 ? 'minut' : 'minuter'}</p>
+        </div>
+      )}
     </div>
   )
 }

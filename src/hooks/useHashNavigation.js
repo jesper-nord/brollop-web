@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 
-const getRoute = (hash, routes) => Object.keys(routes).find(route => route === hash) || routes.fallback
+export const useHashNavigation = (routes, fallback) => {
+  const getRoute = hash => 
+    Object.keys(routes).find(route => route === hash) || fallback
 
-export const useHashNavigation = routes => {
   const hash = window.location.hash ? window.location.hash.replace('#', '') : ''
-  const [route, setRoute] = useState(getRoute(hash, routes))
+  const [route, setRoute] = useState(getRoute(hash))
 
   useEffect(() => {
     window.location.hash = route
@@ -12,6 +13,6 @@ export const useHashNavigation = routes => {
 
   return { 
     route,
-    navigate: hash => setRoute(getRoute(hash, routes))
+    navigate: hash => setRoute(getRoute(hash))
   }
 }

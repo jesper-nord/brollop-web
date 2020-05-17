@@ -9,10 +9,6 @@ const Menu = ({ items, currentPage, onClick }) => {
     <nav className={styles.menuHolder} id='nav-menu'>
       <ul className={styles.menu}>
         {Object.keys(items).map(page => {
-          if (page === 'fallback') {
-            return null
-          }
-          
           const item = items[page]
           return (
             <li

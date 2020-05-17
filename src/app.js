@@ -29,12 +29,11 @@ const routes = {
   rsvp: {
     text: 'O.S.A.',
     content: RSVP
-  },
-  fallback: 'home'
+  }
 }
 
 const App = () => {
-  const { route, navigate } = useHashNavigation(routes)
+  const { route, navigate } = useHashNavigation(routes, 'home')
   const Content = routes[route].content
 
   const scrollAndNavigate = page => {

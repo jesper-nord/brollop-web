@@ -13,14 +13,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3 {
-  color: #595955;
+* {
+  font-family: 'Fauna One', serif;
+  color: #5b5b5b;
+}
+
+h1, h2, h3, h4, h5 {
   font-family: 'Playfair Display', serif;
 }
 
 p {
-  font-family: 'Fauna One', serif;
-  color: #5b5b5b;
   text-align: left;
   line-height: 1.5;
   margin: 0.4em 0;
@@ -29,4 +31,10 @@ p {
 .image-border {
   border: 10px solid white;
   box-shadow: 0 1px 30px -10px #a0a0a0;
+}
+
+figcaption {
+  margin-top: 0.5em;
+  font-style: italic;
+  font-size: 0.85em;
 }

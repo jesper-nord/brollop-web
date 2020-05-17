@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from '../../components'
-import sharedStyles from '../content.module.scss'
 
 export const Accomondation = () => {
   return (
-    <div className={sharedStyles.content}>
+    <article>
       <section>
         <h1>Boende</h1>
         <p>
@@ -38,6 +37,6 @@ export const Accomondation = () => {
           />
         </p>
       </section>
-    </div>
+    </article>
   )
 }

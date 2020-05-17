@@ -23,11 +23,33 @@
       @include media(">laptop") {
         width: 65vw;
       }
+
+      footer {
+        margin-top: auto;
+        margin-bottom: 2em;
+      }
   
       .mainContent {
         width: 100%;
         box-sizing: border-box;
         padding: 0 1em;
+
+        article {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          section {
+            width: 100%;
+            text-align: left;
+            padding: 1.5em 0;
+            border-bottom: 1px solid #e4e4e4;
+        
+            &:first-of-type {
+              padding-top: 0;
+            }
+          }
+        }
 
         @include media(">phone") {
           padding: 0 2em;

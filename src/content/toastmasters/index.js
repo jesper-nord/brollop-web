@@ -2,11 +2,10 @@ import React from 'react'
 import { Link, Presentation } from '../../components'
 import daniela from '../../images/daniela.jpg'
 import thomas from '../../images/thomas.jpg'
-import sharedStyles from '../content.module.scss'
 
 export const Toastmasters = () => {
   return (
-    <div className={sharedStyles.content}>
+    <article>
       <section>
         <h1>Toastmadame &amp; Toastmaster</h1>
         <p>Daniela och Thomas kommer att vara våra eminenta toastmadame och toastmaster för kvällen. De kommer att hålla i trådarna under middagen och göra sitt bästa för att vi ska få en kväll vi aldrig glömmer.</p>
@@ -36,6 +35,6 @@ export const Toastmasters = () => {
           </p>
         </Presentation>
       </section>
-    </div>
+    </article>
   )
 }

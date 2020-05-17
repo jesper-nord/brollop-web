@@ -1,15 +1,17 @@
 import React from 'react'
-import sharedStyles from '../content.module.scss'
+import { format } from 'date-fns'
+import { sv } from 'date-fns/esm/locale'
 import { Link } from '../../components'
+import { WEDDING_DATE } from '../../constants'
 
 export const Information = () => {
   return (
-    <div className={sharedStyles.content}>
+    <article>
       <section>
         <h1>Tid och plats</h1>
         <h2>Hesselby Slott</h2>
-        <p><strong>Datum:</strong> 27 juni 2020</p>
-        <p><strong>Tid:</strong> Klockan 15.00-03.00</p>
+        <p><strong>Datum:</strong> {format(WEDDING_DATE, 'PPP', { locale: sv })}</p>
+        <p><strong>Tid:</strong> Klockan 14.30-03.00</p>
         <p><strong>Adress:</strong> <Link external href='https://goo.gl/maps/grChjctvGP1JHGzq9'>Maltesholmsvägen 1, Vällingby</Link></p>
       </section>
       <section>
@@ -32,6 +34,6 @@ export const Information = () => {
           Vi älskar barn men denna dag får de stanna hemma. Barn som ammas är förstås välkomna.      
         </p>
       </section>
-    </div>
+    </article>
   )
 }

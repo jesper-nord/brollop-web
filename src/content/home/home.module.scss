@@ -1,5 +1,13 @@
 @import "../../media-queries.scss";
 
+.intro {
+  text-align: center !important;
+
+  p {
+    text-align: center;
+  }
+}
+
 .us {
   width: 90%;
   margin-top: 2em;

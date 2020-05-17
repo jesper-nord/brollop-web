@@ -4,14 +4,15 @@ import ReactGA from 'react-ga'
 import './index.scss'
 import App from './app'
 import * as serviceWorker from './serviceWorker'
+import { GA_KEY } from './constants'
 
-ReactGA.initialize('UA-159992142-1', {
+ReactGA.initialize(GA_KEY, {
   debug: window.location.host.includes('localhost'),
   gaOptions: {
     siteSpeedSampleRate: 100
   }
 })
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'))
 
-serviceWorker.register();
+serviceWorker.register()

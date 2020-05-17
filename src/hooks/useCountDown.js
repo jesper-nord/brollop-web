@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { isAfter, differenceInMilliseconds } from 'date-fns'
 
-export const useCountDown = (untilDate, resolution = 60000) => {
+export const useCountDown = (untilDate, resolution = 20000) => {
   const [diff, setDiff] = useState({ days: 0, hours: 0, minutes: 0 })
 
   const updateDiff = useCallback(() => {

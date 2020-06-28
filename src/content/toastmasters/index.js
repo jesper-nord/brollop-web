@@ -12,9 +12,8 @@ export const Toastmasters = () => {
         <br />
         <h2>Tal</h2>
         <p>
-          Vill ni hålla tal eller har frågor så mailar ni så snart som möjligt till <Link href='mailto:toastmasters@ulrikajesper2020.se'>toastmasters@ulrikajesper2020.se</Link>. 
+          Om ni vill hålla tal, eller har frågor om middagen, presenter eller något annat, så mailar ni så snart som möjligt till <Link href='mailto:toastmasters@ulrikajesper2020.se'>toastmasters@ulrikajesper2020.se</Link>. 
         </p>
-        <p>Tal är underbart! Men försök att hålla det kort, gärna under 3 minuter.</p>
         <Presentation title='Daniela' image={daniela}>
           <p>
             Daniela (Ela) är Ulrikas barndomsvän och de gick i skolan tillsammans från årskurs 7.

@@ -9,6 +9,10 @@ export const Countdown = ({ to }) => {
   const showHours = showDays || hours > 0
   const showMinutes = showHours || minutes > 0
 
+  if (!showDays && !showHours && !showMinutes) {
+    return null
+  }
+
   return (
     <div className={styles.countdown}>
       {showDays && (

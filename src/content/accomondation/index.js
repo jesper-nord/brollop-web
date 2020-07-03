@@ -19,7 +19,7 @@ export const Accomondation = () => {
           Om ni ringer eller mailar, uppge att ni är inbjudna till vårt bröllop så hjälper de er med bokningen.
         </p>
         <br />
-        <p>Incheckning sker klockan <strong>14.00</strong> och utcheckning är senast klockan <strong>12.00</strong> på söndagen. Frukosten serveras mellan 09-11.</p>
+        <p>Incheckning sker klockan <strong>14.00</strong> och utcheckning är senast klockan <strong>12.00</strong> på söndagen. Frukost serveras mellan 09.00-11.00 på söndagen.</p>
       </section>
       <section>
         <h1>Hitta hit</h1>

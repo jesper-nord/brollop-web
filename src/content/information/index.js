@@ -2,7 +2,7 @@ import React from 'react'
 import { format } from 'date-fns'
 import { sv } from 'date-fns/esm/locale'
 import { Link } from '../../components'
-import { WEDDING_DATE } from '../../constants'
+import { WEDDING_DATE, EMAILS } from '../../constants'
 
 export const Information = () => {
   return (
@@ -23,10 +23,8 @@ export const Information = () => {
       <section>
         <h1>Presenter</h1>
         <p>Den bästa presenten är att ni kommer på vårat bröllop!</p>
-        <p>
-          Vi har redan allt vi behöver i form av prylar och saker, men vill ni ändå ge oss någonting så tar vi tacksamt emot bidrag till vår smekmånad. 
-          Det går bra att överföra till konto <strong>9252 5138791</strong> (SBAB) och kontanter går förstås också bra. 
-        </p>
+        <p>Vi har redan allt vi behöver i form av prylar och saker. Istället önskar vi oss gärna och tacksamt bidrag till vår smekmånad, via överföring till konto <strong>9252&nbsp;5138791</strong> (SBAB). Om ni vill ge kontanter kommer det finnas möjlighet att göra det på bröllopet.</p>
+        <p>Om ni bestämt vill ge någonting annat så kan ni kontakta våra toastmasters på <Link href={`mailto:${EMAILS.TOASTMASTERS}`}>{EMAILS.TOASTMASTERS}</Link> för förslag!</p>
       </section>
       <section>
         <h1>Barnfritt</h1>

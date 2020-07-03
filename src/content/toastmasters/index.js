@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, Presentation } from '../../components'
 import daniela from '../../images/daniela.jpg'
 import thomas from '../../images/thomas.jpg'
+import { EMAILS } from '../../constants'
 
 export const Toastmasters = () => {
   return (
@@ -12,7 +13,7 @@ export const Toastmasters = () => {
         <br />
         <h2>Tal</h2>
         <p>
-          Om ni vill hålla tal, eller har frågor om middagen, presenter eller något annat, så mailar ni så snart som möjligt till <Link href='mailto:toastmasters@ulrikajesper2020.se'>toastmasters@ulrikajesper2020.se</Link>. 
+          Om ni vill hålla tal, eller har frågor om middagen, presenter eller något annat, så mailar ni så snart som möjligt till <Link href={`mailto:${EMAILS.TOASTMASTERS}`}>{EMAILS.TOASTMASTERS}</Link>. 
         </p>
         <Presentation title='Daniela' image={daniela}>
           <p>

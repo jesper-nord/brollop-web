@@ -12,7 +12,9 @@ export const Accomondation = () => {
         </p>
         <br />
         <p>
-          För att boka rum online <Link external href='https://boka.hesselbyslott.se/se/campaign/campaign-details/764edc54-18af-4b12-90fe-13f2d4bf5e79'>klickar ni här</Link> alternativt går in på <Link href='https://boka.hesselbyslott.se/' external>Hesselby slotts hemsida</Link> och uppger koden <strong>ULRIKAJESPER</strong>.
+          För att boka rum online går ni in på <Link external href='https://boka.hesselbyslott.se/se/campaign/campaign-details/764edc54-18af-4b12-90fe-13f2d4bf5e79'>Hesselby slotts bokningssida</Link> och anger koden <strong>ULRIKAJESPER</strong>.
+        </p>
+        <p>
           Det går även bra att maila bokning till <Link href='mailto:stay@hesselbyslott.se'>stay@hesselbyslott.se</Link> eller ringa <Link href='tel:+4684455140'>08 445 51 40</Link>.
           Om ni ringer eller mailar, uppge att ni är inbjudna till vårt bröllop så hjälper de er med bokningen.
         </p>

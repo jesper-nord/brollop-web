@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import ReactGA from 'react-ga'
 import './index.scss'
 import App from './app'
-import * as serviceWorker from './serviceWorker'
 import { GA_KEY } from './constants'
 
 ReactGA.initialize(GA_KEY, {
@@ -14,5 +13,3 @@ ReactGA.initialize(GA_KEY, {
 })
 
 ReactDOM.render(<App />, document.getElementById('root'))
-
-serviceWorker.register()

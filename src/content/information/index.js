@@ -22,7 +22,7 @@ export const Information = () => {
       </section>
       <section>
         <h1>Presenter</h1>
-        <p>Den bästa presenten är att ni kommer på vårat bröllop!</p>
+        <p>Den bästa presenten är att ni kommer på vårt bröllop!</p>
         <p>
           Vi har redan allt vi behöver i form av prylar och saker, men vill ni ändå ge oss någonting så tar vi tacksamt emot bidrag till vår smekmånad. 
           Det går bra att överföra till konto <strong>9252 5138791</strong> (SBAB) och kontanter går förstås också bra. 

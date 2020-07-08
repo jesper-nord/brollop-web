@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div>
+  <div
+    class="app"
+  >
+    <header
+      class="header "
+    >
+      <div
+        class="headerTitleHolder"
+      >
+        <span
+          class="headerTitle"
+        >
+          Ulrika & Jesper
+        </span>
+        <span
+          class="headerSubtitle"
+        >
+          5 september 2020
+        </span>
+      </div>
+    </header>
+    <div
+      class="mainWrapper"
+    >
+      <main
+        class="main"
+      >
+        <nav
+          class="menuHolder"
+          id="nav-menu"
+        >
+          <ul
+            class="menu"
+          >
+            <li
+              class="menuItem selected"
+              title="Hem"
+            >
+              Hem
+            </li>
+            <li
+              class="menuItem false"
+              title="Information"
+            >
+              Information
+            </li>
+            <li
+              class="menuItem false"
+              title="Toastmasters"
+            >
+              Toastmasters
+            </li>
+            <li
+              class="menuItem false"
+              title="Bilder"
+            >
+              Bilder
+            </li>
+            <li
+              class="menuItem false"
+              title="Boende & Hitta hit"
+            >
+              Boende & Hitta hit
+            </li>
+            <li
+              class="menuItem false"
+              title="O.S.A."
+            >
+              O.S.A.
+            </li>
+          </ul>
+        </nav>
+        <img
+          alt=""
+          class="divider"
+          src="divider.png"
+        />
+        <section
+          class="mainContent"
+        >
+          <article>
+            <section
+              class="intro"
+            >
+              <h1>
+                Välkommen till Ulrika och Jespers bröllop!
+              </h1>
+              <p>
+                Vi hoppas att ni vill fira och dela vår kärlek i september, när Forsgren och Lehtinen blir Nord.
+              </p>
+              <p>
+                På den här sidan hittar ni all information ni behöver inför bröllopet.
+              </p>
+              <figure>
+                <img
+                  alt="Jesper och Ulrika, 2/5 2019"
+                  class="us image-border"
+                  src="us@0.15.jpeg"
+                />
+                <figcaption>
+                  New York 2/5 2019, dagen då vi förlovade oss.
+                </figcaption>
+              </figure>
+            </section>
+            <section>
+              <p>
+                Vi hoppas att alla kan och vill komma på vårt bröllop i september, trots att situationen ser ut som den gör. Vi vill därför påminna om att hålla extra avstånd till varandra och speciellt till våra äldre släktingar. Om du känner dig sjuk så önskar vi att du väljer att stanna hemma istället, och fira med oss en annan gång.
+              </p>
+            </section>
+          </article>
+        </section>
+        <footer>
+          <img
+            alt=""
+            class="divider"
+            src="divider.png"
+          />
+          <p
+            class="location"
+          >
+            Hesselby Slott
+          </p>
+          <p
+            class="date"
+          >
+            lördag 5 september 2020
+          </p>
+          <div
+            class="countdown"
+          />
+        </footer>
+      </main>
+    </div>
+  </div>
+</div>
+`;

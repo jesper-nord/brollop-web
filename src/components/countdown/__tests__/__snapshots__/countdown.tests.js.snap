@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`countdown renders countdown 1`] = `
+<div>
+  <div
+    class="countdown"
+  >
+    <div
+      class="unit"
+    >
+      <p
+        class="header"
+      >
+        24
+      </p>
+      <p>
+        dagar
+      </p>
+    </div>
+    <div
+      class="unit"
+    >
+      <p
+        class="header"
+      >
+        5
+      </p>
+      <p>
+        timmar
+      </p>
+    </div>
+    <div
+      class="unit"
+    >
+      <p
+        class="header"
+      >
+        30
+      </p>
+      <p>
+        minuter
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`countdown renders without days 1`] = `
+<div>
+  <div
+    class="countdown"
+  >
+    <div
+      class="unit"
+    >
+      <p
+        class="header"
+      >
+        5
+      </p>
+      <p>
+        timmar
+      </p>
+    </div>
+    <div
+      class="unit"
+    >
+      <p
+        class="header"
+      >
+        30
+      </p>
+      <p>
+        minuter
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`countdown renders without hours 1`] = `
+<div>
+  <div
+    class="countdown"
+  >
+    <div
+      class="unit"
+    >
+      <p
+        class="header"
+      >
+        30
+      </p>
+      <p>
+        minuter
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -15,4 +15,4 @@ ReactGA.initialize(GA_KEY, {
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
-serviceWorker.register()
+serviceWorker.unregister()

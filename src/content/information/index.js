@@ -24,7 +24,7 @@ export const Information = () => {
         <h1>Presenter</h1>
         <p>Den bästa presenten är att ni kommer på vårt bröllop!</p>
         <p>Vi har redan allt vi behöver i form av prylar och saker. Istället önskar vi oss gärna och tacksamt bidrag till vår smekmånad, via överföring till konto <strong>9252&nbsp;5138791</strong> (SBAB). Om ni vill ge kontanter kommer det finnas möjlighet att göra det på bröllopet.</p>
-        <p>Om ni bestämt vill ge någonting annat så kan ni kontakta våra toastmasters på <Link href={`mailto:${EMAILS.TOASTMASTERS}`}>{EMAILS.TOASTMASTERS}</Link> för förslag!</p>
+        <p>Om ni hellre vill ge någonting annat så kan ni kontakta våra toastmasters på <Link href={`mailto:${EMAILS.TOASTMASTERS}`}>{EMAILS.TOASTMASTERS}</Link> för förslag!</p>
       </section>
       <section>
         <h1>Barnfritt</h1>

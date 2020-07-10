@@ -21,10 +21,10 @@ export const Toastmasters = ({ contentId }) => {
     <article>
       {intro.map(textContent => <section>{parseHtml(textContent.html)}</section>)}
       <Presentation title='Daniela' image={daniela}>
-        {toastmadame.map(textContent => <section>{parseHtml(textContent.html)}</section>)}
+        {toastmadame.map(textContent => <div>{parseHtml(textContent.html)}</div>)}
       </Presentation>
       <Presentation title='Thomas' image={thomas}>
-        {toastmaster.map(textContent => <section>{parseHtml(textContent.html)}</section>)}
+        {toastmaster.map(textContent => <div>{parseHtml(textContent.html)}</div>)}
       </Presentation>
     </article>
   );

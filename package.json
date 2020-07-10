@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "date-fns": "^2.14.0",
+    "graphql-request": "^2.0.0",
     "include-media": "^1.4.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-ga": "^3.0.0"
+    "react-ga": "^3.0.0",
+    "react-html-parser": "^2.0.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.0",

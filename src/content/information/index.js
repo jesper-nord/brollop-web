@@ -3,6 +3,7 @@ import { request } from 'graphql-request';
 
 import { GRAPHCMS_ENDPOINT, getPageContentQuery } from '../../util/query';
 import { parseHtml } from '../../util/parseHtml';
+import { Spinner } from '../../components';
 
 const PAGE_ID = 'ckc7ylsmg0iir01545re6b3n4';
 
@@ -19,9 +20,8 @@ export const Information = () => {
   }, []);
 
   if (!content) {
-    return null;
+    return <Spinner />
   }
-
   return (
     <article>
       {content.map(pageContent => <section>{parseHtml(pageContent.html)}</section>)}

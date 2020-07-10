@@ -3,7 +3,7 @@ import { request } from 'graphql-request';
 
 import { GRAPHCMS_ENDPOINT, getPageContentQuery } from '../../util/query';
 import { parseHtml } from '../../util/parseHtml';
-import { Presentation } from '../../components'
+import { Presentation, Spinner } from '../../components'
 import daniela from '../../images/daniela.jpg'
 import thomas from '../../images/thomas.jpg'
 
@@ -30,7 +30,7 @@ export const Toastmasters = () => {
   }, []);
 
   if (!content) {
-    return null;
+    return <Spinner />
   }
 
   return (

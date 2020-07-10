@@ -3,6 +3,7 @@ import { request } from 'graphql-request';
 
 import { GRAPHCMS_ENDPOINT, getPageContentQuery } from '../../util/query';
 import { parseHtml } from '../../util/parseHtml';
+import { Spinner } from '../../components';
 
 const PAGE_ID = 'ckc7ywymo0ikz0154g1xb362c';
 
@@ -19,7 +20,7 @@ export const Accomondation = () => {
   }, []);
 
   if (!content) {
-    return null;
+    return <Spinner />
   }
 
   return (

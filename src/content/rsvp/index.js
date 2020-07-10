@@ -3,6 +3,7 @@ import { request } from 'graphql-request';
 
 import { GRAPHCMS_ENDPOINT, getPageContentQuery } from '../../util/query';
 import { parseHtml } from '../../util/parseHtml';
+import { Spinner } from '../../components';
 
 const PAGE_ID = 'ckcgfuo5s03to0148x2rbfhd7';
 
@@ -19,7 +20,7 @@ export const RSVP = () => {
   }, []);
 
   if (!content) {
-    return null;
+    return <Spinner />
   }
 
   return (

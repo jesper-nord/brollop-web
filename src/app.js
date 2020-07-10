@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import ReactGA from 'react-ga'
 import styles from './app.module.scss'
 import { Header, Menu, Divider } from './components'
-import { Accomondation, Home, Information, RSVP, Pictures, Toastmasters, ShortInfo } from './content'
+import { Accomondation, Home, TextContent, Toastmasters, ShortInfo } from './content'
 import { useHashNavigation } from './hooks/useHashNavigation'
 
 const routes = {
@@ -12,29 +12,35 @@ const routes = {
   },
   information: {
     text: 'Information',
-    content: Information
+    content: TextContent,
+    contentId: 'ckc7ylsmg0iir01545re6b3n4'
   },
   toastmasters: {
     text: 'Toastmasters',
-    content: Toastmasters
+    content: Toastmasters,
+    contentId: 'ckcgg3gio0d4n0153embbxkp7'
   },
   pictures: {
     text: 'Bilder',
-    content: Pictures,
+    content: TextContent,
+    contentId: 'ckcggto6w043w014871is41p0'
   },
   accomondation: {
     text: 'Boende & Hitta hit',
-    content: Accomondation
+    content: Accomondation,
+    contentId: 'ckc7ywymo0ikz0154g1xb362c'
   },
   rsvp: {
     text: 'O.S.A.',
-    content: RSVP
+    content: TextContent,
+    contentId: 'ckcgfuo5s03to0148x2rbfhd7'
   }
 }
 
 const App = () => {
-  const { route, navigate } = useHashNavigation(routes, 'home')
-  const Content = routes[route].content
+  const { route, navigate } = useHashNavigation(routes, 'home');
+  const currentRoute = routes[route];
+  const Content = currentRoute.content;
 
   const scrollAndNavigate = page => {
     document.getElementById('nav-menu').scrollIntoView({ behavior: 'smooth' })
@@ -53,7 +59,7 @@ const App = () => {
           <Menu items={routes} currentPage={route} onClick={scrollAndNavigate} />
           <Divider />
           <section className={styles.mainContent}>
-            <Content />
+            <Content contentId={currentRoute.contentId} />
           </section>
           <ShortInfo />
         </main>

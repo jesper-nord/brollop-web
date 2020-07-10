@@ -1,23 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { request } from 'graphql-request';
-
-import { GRAPHCMS_ENDPOINT, getPageContentQuery } from '../../util/query';
+import React from 'react';
+import { useCmsContent } from '../../hooks/useCmsContent';
 import { parseHtml } from '../../util/parseHtml';
 import { Spinner } from '../../components';
 
-const PAGE_ID = 'ckc7ywymo0ikz0154g1xb362c';
-
-export const Accomondation = () => {
-  const [content, setContent] = useState(null);
-
-  useEffect(() => {
-    const fetchContent = async () => {
-      const { pageContent } = await request(GRAPHCMS_ENDPOINT, getPageContentQuery(PAGE_ID));
-      setContent(pageContent.textContent);
-    };
-
-    fetchContent();
-  }, []);
+export const Accomondation = ({ contentId }) => {
+  const [content] = useCmsContent(contentId);
 
   if (!content) {
     return <Spinner />

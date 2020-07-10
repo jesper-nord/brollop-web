@@ -1,7 +1,5 @@
 export { Accomondation } from './accomondation'
+export { TextContent } from './common/TextContent'
 export { Home } from './home'
-export { Information } from './information'
-export { RSVP } from './rsvp'
 export { ShortInfo } from './shortInfo'
 export { Toastmasters } from './toastmasters'
-export { Pictures } from './pictures'

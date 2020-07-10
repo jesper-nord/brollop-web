@@ -1,13 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { request } from 'graphql-request';
+
+import { GRAPHCMS_ENDPOINT, getPageContentQuery } from '../../util/query';
+import { parseHtml } from '../../util/parseHtml';
+
+const PAGE_ID = 'ckcggto6w043w014871is41p0';
 
 export const Pictures = () => {
+  const [content, setContent] = useState(null);
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      const { pageContent } = await request(GRAPHCMS_ENDPOINT, getPageContentQuery(PAGE_ID));
+      setContent(pageContent.textContent);
+    };
+
+    fetchContent();
+  }, []);
+
+  if (!content) {
+    return null;
+  }
+
   return (
     <article>
-      <section>
-        <h1>Bilder</h1>
-        <p>Under vigselakten så undanbedes ni att ta bilder eftersom vi kommer att ha professionell fotograf och videograf på plats för att fånga ögonblicken.</p>
-        <p>Under resten av dagen och kvällen går det självklart bra att ta bilder! På den här sidan kommer ni ha möjlighet att lägga upp era bilder efter bröllopet, så att vi och alla andra gäster kan ta del av dem.</p>
-      </section>
+      {content.map(pageContent => <section>{parseHtml(pageContent.html)}</section>)}
     </article>
-  )
+  );
 }

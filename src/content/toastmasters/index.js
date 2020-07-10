@@ -1,40 +1,47 @@
-import React from 'react'
-import { Link, Presentation } from '../../components'
+import React, { useState, useEffect } from 'react';
+import { request } from 'graphql-request';
+
+import { GRAPHCMS_ENDPOINT, getPageContentQuery } from '../../util/query';
+import { parseHtml } from '../../util/parseHtml';
+import { Presentation } from '../../components'
 import daniela from '../../images/daniela.jpg'
 import thomas from '../../images/thomas.jpg'
-import { EMAILS } from '../../constants'
+
+const PAGE_ID = 'ckcgg3gio0d4n0153embbxkp7';
+const TOASTMADAME_ID = 'ckcgg5qb403xb0148dfjldnbp';
+const TOASTMASTER_ID = 'ckcgg81n403xt0104hprsc95s';
 
 export const Toastmasters = () => {
+  const [content, setContent] = useState(null);
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      const data = await request(GRAPHCMS_ENDPOINT, getPageContentQuery(PAGE_ID));
+      const dataToastmadame = await request(GRAPHCMS_ENDPOINT, getPageContentQuery(TOASTMADAME_ID));
+      const dataToastmaster = await request(GRAPHCMS_ENDPOINT, getPageContentQuery(TOASTMASTER_ID));
+      setContent({
+        intro: data.pageContent.textContent,
+        toastmadame: dataToastmadame.pageContent.textContent,
+        toastmaster: dataToastmaster.pageContent.textContent
+      })
+    };
+
+    fetchContent();
+  }, []);
+
+  if (!content) {
+    return null;
+  }
+
   return (
     <article>
-      <section>
-        <h1>Toastmadame &amp; Toastmaster</h1>
-        <p>Daniela och Thomas kommer att vara våra eminenta toastmadame och toastmaster för kvällen. De kommer att hålla i trådarna under middagen och göra sitt bästa för att vi ska få en kväll vi aldrig glömmer.</p>
-        <br />
-        <h2>Tal</h2>
-        <p>
-          Om ni vill hålla tal, eller har frågor om middagen, presenter eller något annat, så mailar ni så snart som möjligt till <Link href={`mailto:${EMAILS.TOASTMASTERS}`}>{EMAILS.TOASTMASTERS}</Link>. 
-        </p>
-        <Presentation title='Daniela' image={daniela}>
-          <p>
-            Daniela (Ela) är Ulrikas barndomsvän och de gick i skolan tillsammans från årskurs 7.
-            De har gjort mycket roligt tillsammans, bland annat rest ihop och varit på ridläger.
-            Det är tack vare Daniela att bröllopet överhuvudtaget blir av, eftersom hon tog med Jesper till en oktoberfest på Ulrikas jobb där brudparet träffades för första gången. 
-          </p>
-          <p>
-            Utöver sin roll som toastmadame är Daniela även Ulrikas brudtärna.
-          </p>
-        </Presentation>
-        <Presentation title='Thomas' image={thomas}>
-          <p>
-            Thomas och Jesper har känt varandra i flera år och har ett gemensamt intresse för brädspel, datorspel och bra öl. 
-            De har även hunnit med att jobba på två jobb tillsammans i konsultbranchen.
-          </p>
-          <p>
-            Utöver sin roll som toastmaster är Thomas även Jespers best man.
-          </p>
-        </Presentation>
-      </section>
+      {content.intro.map(pageContent => <section>{parseHtml(pageContent.html)}</section>)}
+      <Presentation title='Daniela' image={daniela}>
+        {content.toastmadame.map(pageContent => <section>{parseHtml(pageContent.html)}</section>)}
+      </Presentation>
+      <Presentation title='Thomas' image={thomas}>
+        {content.toastmaster.map(pageContent => <section>{parseHtml(pageContent.html)}</section>)}
+      </Presentation>
     </article>
-  )
+  );
 }

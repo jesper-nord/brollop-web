@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import { request } from 'graphql-request'
-import ReactHtmlParser from 'react-html-parser'
-import { GRAPHCMS_ENDPOINT, getPageContentQuery } from '../../constants'
+import React, { useState, useEffect } from 'react';
+import { request } from 'graphql-request';
 
-const PAGE_ID = 'ckc7ylsmg0iir01545re6b3n4'
+import { GRAPHCMS_ENDPOINT, getPageContentQuery } from '../../util/query';
+import { parseHtml } from '../../util/parseHtml';
+
+const PAGE_ID = 'ckc7ylsmg0iir01545re6b3n4';
 
 export const Information = () => {
   const [content, setContent] = useState(null);
@@ -23,7 +24,7 @@ export const Information = () => {
 
   return (
     <article>
-      {content.map(pageContent => <section>{ReactHtmlParser(pageContent.html)}</section>)}
+      {content.map(pageContent => <section>{parseHtml(pageContent.html)}</section>)}
     </article>
-  )
+  );
 }

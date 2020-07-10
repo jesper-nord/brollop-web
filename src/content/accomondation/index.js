@@ -1,38 +1,30 @@
-import React from 'react'
-import { Link } from '../../components'
+import React, { useState, useEffect } from 'react';
+import { request } from 'graphql-request';
+
+import { GRAPHCMS_ENDPOINT, getPageContentQuery } from '../../util/query';
+import { parseHtml } from '../../util/parseHtml';
+
+const PAGE_ID = 'ckc7ywymo0ikz0154g1xb362c';
 
 export const Accomondation = () => {
+  const [content, setContent] = useState(null);
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      const { pageContent } = await request(GRAPHCMS_ENDPOINT, getPageContentQuery(PAGE_ID));
+      setContent(pageContent.textContent);
+    };
+
+    fetchContent();
+  }, []);
+
+  if (!content) {
+    return null;
+  }
+
   return (
     <article>
-      <section>
-        <h1>Boende</h1>
-        <p>
-          Det finns möjlighet att boka övernattning på slottets hotell, och vi blir självklart väldigt glada 
-          om ni skulle välja att stanna över natten och sedan äta frukost tillsammans dagen efter.
-        </p>
-        <br />
-        <p>
-          För att boka rum online går ni in på <Link external href='https://boka.hesselbyslott.se/se/campaign/campaign-details/764edc54-18af-4b12-90fe-13f2d4bf5e79'>Hesselby slotts bokningssida</Link> och anger koden <strong>ULRIKAJESPER</strong>.
-        </p>
-        <p>
-          Det går även bra att maila bokning till <Link href='mailto:stay@hesselbyslott.se'>stay@hesselbyslott.se</Link> eller ringa <Link href='tel:+4684455140'>08 445 51 40</Link>.
-          Om ni ringer eller mailar, uppge att ni är inbjudna till vårt bröllop så hjälper de er med bokningen.
-        </p>
-        <br />
-        <p>Incheckning sker klockan <strong>14.00</strong> och utcheckning är senast klockan <strong>12.00</strong> på söndagen. Frukost serveras mellan 09.00-11.00 på söndagen.</p>
-      </section>
-      <section>
-        <h1>Hitta hit</h1>
-        <h2>Tunnelbana</h2>
-        <p>
-          Det tar 5-10 minuter att gå från Johannelunds tunnelbanestation.
-          Gå längs spårets riktning över bron och sedan ner till höger, gå under bron och fortsätt rakt fram över vägen. Första gatan till vänster leder in till slottsområdet.
-        </p>
-        <h2>Bil</h2>
-        <p>
-          Gratis gästparkering finns på två ställen vid infarten till slottet.
-        </p>
-      </section>
+      {content.map(pageContent => <section>{parseHtml(pageContent.html)}</section>)}
       <section>
         <p>
           <iframe
@@ -45,5 +37,5 @@ export const Accomondation = () => {
         </p>
       </section>
     </article>
-  )
+  );
 }

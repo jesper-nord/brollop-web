@@ -1,40 +1,31 @@
-import React from 'react'
-import { Link, Presentation } from '../../components'
+import React from 'react';
+import { useCmsContent } from '../../hooks/useCmsContent';
+import { parseHtml } from '../../util/parseHtml';
+import { Presentation, Spinner } from '../../components'
 import daniela from '../../images/daniela.jpg'
 import thomas from '../../images/thomas.jpg'
-import { EMAILS } from '../../constants'
 
-export const Toastmasters = () => {
+const TOASTMADAME_ID = 'ckcgg5qb403xb0148dfjldnbp';
+const TOASTMASTER_ID = 'ckcgg81n403xt0104hprsc95s';
+
+export const Toastmasters = ({ contentId }) => {
+  const [intro] = useCmsContent(contentId);
+  const [toastmadame] = useCmsContent(TOASTMADAME_ID);
+  const [toastmaster] = useCmsContent(TOASTMASTER_ID);
+
+  if (!intro || !toastmadame || !toastmaster) {
+    return <Spinner />
+  }
+
   return (
     <article>
-      <section>
-        <h1>Toastmadame &amp; Toastmaster</h1>
-        <p>Daniela och Thomas kommer att vara våra eminenta toastmadame och toastmaster för kvällen. De kommer att hålla i trådarna under middagen och göra sitt bästa för att vi ska få en kväll vi aldrig glömmer.</p>
-        <br />
-        <h2>Tal</h2>
-        <p>
-          Om ni vill hålla tal, eller har frågor om middagen, presenter eller något annat, så mailar ni så snart som möjligt till <Link href={`mailto:${EMAILS.TOASTMASTERS}`}>{EMAILS.TOASTMASTERS}</Link>. 
-        </p>
-        <Presentation title='Daniela' image={daniela}>
-          <p>
-            Daniela (Ela) är Ulrikas barndomsvän och de gick i skolan tillsammans från årskurs 7.
-            De har gjort mycket roligt tillsammans, bland annat rest ihop och varit på ridläger.
-            Det är tack vare Daniela att bröllopet överhuvudtaget blir av, eftersom hon tog med Jesper till en oktoberfest på Ulrikas jobb där brudparet träffades för första gången. 
-          </p>
-          <p>
-            Utöver sin roll som toastmadame är Daniela även Ulrikas brudtärna.
-          </p>
-        </Presentation>
-        <Presentation title='Thomas' image={thomas}>
-          <p>
-            Thomas och Jesper har känt varandra i flera år och har ett gemensamt intresse för brädspel, datorspel och bra öl. 
-            De har även hunnit med att jobba på två jobb tillsammans i konsultbranchen.
-          </p>
-          <p>
-            Utöver sin roll som toastmaster är Thomas även Jespers best man.
-          </p>
-        </Presentation>
-      </section>
+      {intro.map(textContent => <section>{parseHtml(textContent.html)}</section>)}
+      <Presentation title='Daniela' image={daniela}>
+        {toastmadame.map(textContent => <div>{parseHtml(textContent.html)}</div>)}
+      </Presentation>
+      <Presentation title='Thomas' image={thomas}>
+        {toastmaster.map(textContent => <div>{parseHtml(textContent.html)}</div>)}
+      </Presentation>
     </article>
-  )
+  );
 }

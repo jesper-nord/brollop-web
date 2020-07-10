@@ -7,8 +7,20 @@
   margin: 2em 0;
 
   @include media(">phone") {
-    flex-direction: row;
     align-items: flex-start;
+  }
+
+  .top {
+    display: flex;
+  }
+  
+  .bottom {
+    display: flex;
+    flex-direction: column;
+
+    @include media(">phone") {
+      flex-direction: row;
+    }
   }
   
   .left {

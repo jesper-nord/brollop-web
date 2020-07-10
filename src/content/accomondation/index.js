@@ -12,7 +12,7 @@ export const Accomondation = ({ contentId }) => {
 
   return (
     <article>
-      {content.map(pageContent => <section>{parseHtml(pageContent.html)}</section>)}
+      {content.map(textContent => <section>{parseHtml(textContent.html)}</section>)}
       <section>
         <p>
           <iframe

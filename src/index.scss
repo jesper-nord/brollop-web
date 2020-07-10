@@ -31,6 +31,18 @@ a {
   &:hover {
     color: rgba(0, 0, 0, 0.6);
   }
+
+  &[target=_blank]:after {
+    background-image: url('./images/external-link.png');
+    position: relative;
+    background-size: 14px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    opacity: 0.7;
+    margin-left: 2px;
+    content: "";
+  }
 }
 
 p {

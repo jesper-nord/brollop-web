@@ -1,16 +1,16 @@
-import React from 'react'
-import styles from './countdown.module.scss'
-import { useCountDown } from '../../hooks/useCountDown'
+import React from 'react';
+import styles from './countdown.module.scss';
+import { useCountDown } from '../../hooks/useCountDown';
 
 export const Countdown = ({ to }) => {
-  const [ days, hours, minutes ] = useCountDown(to)
+  const [days, hours, minutes] = useCountDown(to);
 
-  const showDays = days > 0
-  const showHours = showDays || hours > 0
-  const showMinutes = showHours || minutes > 0
+  const showDays = days > 0;
+  const showHours = showDays || hours > 0;
+  const showMinutes = showHours || minutes > 0;
 
   if (!showDays && !showHours && !showMinutes) {
-    return null
+    return null;
   }
 
   return (
@@ -34,5 +34,5 @@ export const Countdown = ({ to }) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};

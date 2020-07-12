@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import { request } from 'graphql-request';
 import { GRAPHCMS_ENDPOINT, getPageContentQuery } from '../util/query';
 
@@ -17,4 +17,4 @@ export const useCmsContent = contentId => {
   }, [contentId]);
 
   return [content, loading];
-}
+};

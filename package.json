@@ -15,17 +15,21 @@
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.4.3",
     "@testing-library/user-event": "^12.0.11",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "mockdate": "^3.0.2",
     "node-sass": "^4.14.1",
+    "prettier": "^2.0.5",
     "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!date-fns)/\""
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!date-fns)/\"",
+    "lint": "eslint ./src/**/*.js",
+    "lint:fix": "eslint ./src/**/*.js --fix"
   },
   "browserslist": {
     "production": [

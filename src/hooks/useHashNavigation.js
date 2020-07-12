@@ -1,18 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 export const useHashNavigation = (routes, fallback) => {
-  const getRoute = hash => 
-    Object.keys(routes).find(route => route === hash) || fallback
+  const parseRoute = hash => Object.keys(routes).find(route => route === hash) || fallback;
 
-  const hash = window.location.hash ? window.location.hash.replace('#', '') : ''
-  const [route, setRoute] = useState(getRoute(hash))
+  const hash = window.location.hash ? window.location.hash.replace('#', '') : '';
+  const [route, setRoute] = useState(parseRoute(hash));
 
   useEffect(() => {
-    window.location.hash = route
-  }, [route])
+    window.location.hash = route;
+  }, [route]);
 
-  return { 
+  return {
     route,
-    navigate: hash => setRoute(getRoute(hash))
-  }
-}
+    navigate: h => setRoute(parseRoute(h))
+  };
+};

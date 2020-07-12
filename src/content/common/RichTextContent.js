@@ -7,12 +7,12 @@ export const RichTextContent = ({ contentId }) => {
   const [content, loading] = useCmsContent(contentId);
 
   if (loading) {
-    return <Spinner />
+    return <Spinner />;
   }
-  
+
   return (
     <article>
       {content.map(textContent => <section>{parseHtml(textContent.html)}</section>)}
     </article>
   );
-}
+};

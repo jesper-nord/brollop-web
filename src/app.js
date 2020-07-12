@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
-import ReactGA from 'react-ga'
-import styles from './app.module.scss'
-import { Header, Menu, Divider } from './components'
-import { Home, RichTextContent, Toastmasters, Footer } from './content'
-import { useHashNavigation } from './hooks/useHashNavigation'
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
+import styles from './app.module.scss';
+import { Header, Menu, Divider } from './components';
+import {
+  Home, RichTextContent, Toastmasters, Footer
+} from './content';
+import { useHashNavigation } from './hooks/useHashNavigation';
 
 const routes = {
   home: {
@@ -35,7 +37,7 @@ const routes = {
     content: RichTextContent,
     contentId: 'ckcgfuo5s03to0148x2rbfhd7'
   }
-}
+};
 
 const App = () => {
   const { route, navigate } = useHashNavigation(routes, 'home');
@@ -43,13 +45,13 @@ const App = () => {
   const Content = currentRoute.content;
 
   const scrollAndNavigate = page => {
-    document.getElementById('nav-menu').scrollIntoView({ behavior: 'smooth' })
-    navigate(page)
-  }
+    document.getElementById('nav-menu').scrollIntoView({ behavior: 'smooth' });
+    navigate(page);
+  };
 
   useEffect(() => {
-    ReactGA.pageview(route)
-  }, [route])
+    ReactGA.pageview(route);
+  }, [route]);
 
   return (
     <div className={styles.app}>
@@ -65,7 +67,7 @@ const App = () => {
         </main>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

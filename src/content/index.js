@@ -1,5 +1,4 @@
-export { Accomondation } from './accomondation'
-export { TextContent } from './common/TextContent'
+export { RichTextContent } from './common/RichTextContent'
 export { Home } from './home'
-export { ShortInfo } from './shortInfo'
+export { Footer } from './footer'
 export { Toastmasters } from './toastmasters'

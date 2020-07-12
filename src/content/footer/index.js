@@ -1,11 +1,11 @@
 import React from 'react'
 import { format } from 'date-fns'
 import { sv } from 'date-fns/esm/locale'
-import styles from './shortinfo.module.scss'
+import styles from './footer.module.scss'
 import { Countdown, Divider } from '../../components'
 import { WEDDING_DATE } from '../../constants'
 
-export const ShortInfo = () => {
+export const Footer = () => {
   return (
     <footer>
       <Divider />

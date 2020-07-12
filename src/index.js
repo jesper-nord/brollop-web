@@ -12,10 +12,16 @@ ReactGA.initialize(GA_KEY, {
   }
 });
 
-ReactDOM.render(<App />, document.getElementById('root'));
+window.onerror = message => {
+  ReactGA.exception({
+    description: `An error occured: ${message}`
+  });
+};
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.ready.then(registration => {
     registration.unregister();
   });
 }
+
+ReactDOM.render(<App />, document.getElementById('root'));

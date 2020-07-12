@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
-import ReactGA from 'react-ga'
-import styles from './app.module.scss'
-import { Header, Menu, Divider } from './components'
-import { Accomondation, Home, TextContent, Toastmasters, ShortInfo } from './content'
-import { useHashNavigation } from './hooks/useHashNavigation'
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
+import styles from './app.module.scss';
+import { Header, Menu, Divider } from './components';
+import {
+  Home, RichTextContent, Toastmasters, Footer
+} from './content';
+import { useHashNavigation } from './hooks/useHashNavigation';
 
 const routes = {
   home: {
@@ -12,7 +14,7 @@ const routes = {
   },
   information: {
     text: 'Information',
-    content: TextContent,
+    content: RichTextContent,
     contentId: 'ckc7ylsmg0iir01545re6b3n4'
   },
   toastmasters: {
@@ -22,20 +24,20 @@ const routes = {
   },
   pictures: {
     text: 'Bilder',
-    content: TextContent,
+    content: RichTextContent,
     contentId: 'ckcggto6w043w014871is41p0'
   },
   accomondation: {
     text: 'Boende & Hitta hit',
-    content: Accomondation,
+    content: RichTextContent,
     contentId: 'ckc7ywymo0ikz0154g1xb362c'
   },
   rsvp: {
     text: 'O.S.A.',
-    content: TextContent,
+    content: RichTextContent,
     contentId: 'ckcgfuo5s03to0148x2rbfhd7'
   }
-}
+};
 
 const App = () => {
   const { route, navigate } = useHashNavigation(routes, 'home');
@@ -43,13 +45,13 @@ const App = () => {
   const Content = currentRoute.content;
 
   const scrollAndNavigate = page => {
-    document.getElementById('nav-menu').scrollIntoView({ behavior: 'smooth' })
-    navigate(page)
-  }
+    document.getElementById('nav-menu').scrollIntoView({ behavior: 'smooth' });
+    navigate(page);
+  };
 
   useEffect(() => {
-    ReactGA.pageview(route)
-  }, [route])
+    ReactGA.pageview(route);
+  }, [route]);
 
   return (
     <div className={styles.app}>
@@ -61,11 +63,11 @@ const App = () => {
           <section className={styles.mainContent}>
             <Content contentId={currentRoute.contentId} />
           </section>
-          <ShortInfo />
+          <Footer />
         </main>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

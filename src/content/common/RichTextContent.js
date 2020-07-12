@@ -3,16 +3,16 @@ import { useCmsContent } from '../../hooks/useCmsContent';
 import { parseHtml } from '../../util/parseHtml';
 import { Spinner } from '../../components';
 
-export const TextContent = ({ contentId }) => {
-  const [content] = useCmsContent(contentId);
+export const RichTextContent = ({ contentId }) => {
+  const [content, loading] = useCmsContent(contentId);
 
-  if (!content) {
-    return <Spinner />
+  if (loading) {
+    return <Spinner />;
   }
-  
+
   return (
     <article>
       {content.map(textContent => <section>{parseHtml(textContent.html)}</section>)}
     </article>
   );
-}
+};

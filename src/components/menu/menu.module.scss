@@ -21,9 +21,7 @@
   
     .menuItem {
       color: rgba(0, 0, 0, 0.4);
-      font-family: 'Fauna One', serif;
       cursor: pointer;
-      display: inline;
       margin: 0.3em 0;
 
       @include media(">tablet") {

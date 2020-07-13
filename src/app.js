@@ -2,46 +2,11 @@ import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import styles from './app.module.scss';
 import { Header, Menu, Divider } from './components';
-import {
-  Home, RichTextContent, Toastmasters, Footer
-} from './content';
-import { useHashNavigation } from './hooks/useHashNavigation';
-
-const routes = {
-  home: {
-    text: 'Hem',
-    content: Home
-  },
-  information: {
-    text: 'Information',
-    content: RichTextContent,
-    contentId: 'ckc7ylsmg0iir01545re6b3n4'
-  },
-  toastmasters: {
-    text: 'Toastmasters',
-    content: Toastmasters,
-    contentId: 'ckcgg3gio0d4n0153embbxkp7'
-  },
-  pictures: {
-    text: 'Bilder',
-    content: RichTextContent,
-    contentId: 'ckcggto6w043w014871is41p0'
-  },
-  accomondation: {
-    text: 'Boende & Hitta hit',
-    content: RichTextContent,
-    contentId: 'ckc7ywymo0ikz0154g1xb362c'
-  },
-  rsvp: {
-    text: 'O.S.A.',
-    content: RichTextContent,
-    contentId: 'ckcgfuo5s03to0148x2rbfhd7'
-  }
-};
+import { useRouting } from './hooks/useRouting';
+import { Footer } from './content';
 
 const App = () => {
-  const { route, navigate } = useHashNavigation(routes, 'home');
-  const currentRoute = routes[route];
+  const { pageName, currentRoute, navigate } = useRouting();
   const Content = currentRoute.content;
 
   const scrollAndNavigate = page => {
@@ -50,15 +15,15 @@ const App = () => {
   };
 
   useEffect(() => {
-    ReactGA.pageview(route);
-  }, [route]);
+    ReactGA.pageview(pageName);
+  }, [pageName]);
 
   return (
     <div className={styles.app}>
       <Header />
       <div className={styles.mainWrapper}>
         <main className={styles.main}>
-          <Menu items={routes} currentPage={route} onClick={scrollAndNavigate} />
+          <Menu currentPage={pageName} onClick={scrollAndNavigate} />
           <Divider />
           <section className={styles.mainContent}>
             <Content contentId={currentRoute.contentId} />

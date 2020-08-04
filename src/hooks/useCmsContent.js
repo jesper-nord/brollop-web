@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { request } from 'graphql-request';
-import { GRAPHCMS_ENDPOINT, getPageContentQuery } from '../util/query';
+import { GRAPHCMS_ENDPOINT, getPageContentQuery } from '../util/cms';
 
 export const useCmsContent = contentId => {
   const [content, setContent] = useState(null);

@@ -7,7 +7,7 @@ import { Footer } from './content';
 
 const App = () => {
   const { pageName, currentRoute, navigate } = useRouting();
-  const Content = currentRoute.content;
+  const ContentType = currentRoute.contentType;
 
   const scrollAndNavigate = page => {
     document.getElementById('nav-menu').scrollIntoView({ behavior: 'smooth' });
@@ -26,7 +26,7 @@ const App = () => {
           <Menu currentPage={pageName} onClick={scrollAndNavigate} />
           <Divider />
           <section className={styles.mainContent}>
-            <Content contentId={currentRoute.contentId} />
+            <ContentType contentId={currentRoute.contentId} />
           </section>
           <Footer />
         </main>

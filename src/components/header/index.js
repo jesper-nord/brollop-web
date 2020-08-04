@@ -5,7 +5,7 @@ import styles from './header.module.scss';
 import { useLazyLoad } from '../../hooks/useLazyLoad';
 import { useRouting } from '../../hooks/useRouting';
 import banner from '../../images/hesselby-slott.jpg';
-import { WEDDING_DATE } from '../../constants';
+import { WEDDING_DATE } from '../../util/constants';
 
 const Header = () => {
   const { navigate } = useRouting();

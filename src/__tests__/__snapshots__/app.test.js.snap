@@ -12,7 +12,9 @@ exports[`renders without crashing 1`] = `
         class="headerTitleHolder"
       >
         <span
+          aria-level="1"
           class="headerTitle"
+          role="heading"
         >
           Ulrika & Jesper
         </span>
@@ -129,9 +131,6 @@ exports[`renders without crashing 1`] = `
           >
             lördag 5 september 2020
           </p>
-          <div
-            class="countdown"
-          />
         </footer>
       </main>
     </div>

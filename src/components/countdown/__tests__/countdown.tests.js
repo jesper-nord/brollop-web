@@ -1,6 +1,5 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 import MockDate from 'mockdate';
 import { parseISO } from '../../../util/date';
 import { Countdown } from '..';

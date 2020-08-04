@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import ReactGA from 'react-ga';
 import './index.scss';
 import App from './app';
-import { GA_KEY } from './constants';
+import { GA_KEY } from './util/constants';
 
 ReactGA.initialize(GA_KEY, {
   debug: window.location.host.includes('localhost'),

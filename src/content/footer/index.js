@@ -3,7 +3,7 @@ import { sv } from 'date-fns/esm/locale';
 import { format } from '../../util/date';
 import styles from './footer.module.scss';
 import { Countdown, Divider } from '../../components';
-import { WEDDING_DATE } from '../../constants';
+import { WEDDING_DATE } from '../../util/constants';
 
 export const Footer = () => (
   <footer>

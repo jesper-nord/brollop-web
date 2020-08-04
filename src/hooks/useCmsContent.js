@@ -8,6 +8,7 @@ export const useCmsContent = contentId => {
 
   useEffect(() => {
     const fetchContent = async () => {
+      setLoading(true);
       const { pageContent } = await request(GRAPHCMS_ENDPOINT, getPageContentQuery(contentId));
       setContent(pageContent.textContent);
       setLoading(false);

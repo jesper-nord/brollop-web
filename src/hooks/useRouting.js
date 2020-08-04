@@ -15,7 +15,6 @@ export const useRouting = () => {
 
   useEffect(() => {
     const updateHash = () => setRoute(parseRoute());
-
     window.addEventListener('hashchange', updateHash, false);
     return () => window.removeEventListener('hashchange', updateHash, false);
   }, []);

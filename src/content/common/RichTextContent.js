@@ -12,7 +12,7 @@ export const RichTextContent = ({ contentId }) => {
 
   return (
     <article>
-      {content.map(textContent => <section>{parseHtml(textContent.html)}</section>)}
+      {content.map((textContent, i) => <section key={i}>{parseHtml(textContent.html)}</section>)}
     </article>
   );
 };

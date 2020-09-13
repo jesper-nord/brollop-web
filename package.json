@@ -4,7 +4,8 @@
   "private": true,
   "dependencies": {
     "date-fns": "^2.16.1",
-    "graphql-request": "^2.0.0",
+    "graphql": "^15.3.0",
+    "graphql-request": "^3.1.0",
     "include-media": "^1.4.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -13,7 +14,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^10.4.9",
+    "@testing-library/react": "^11.0.2",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
